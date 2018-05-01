@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Neighbourhood map</title>
+</head>
+<body>
+    <div class="row">
+        <section class="col-3 sm-3">
+            <input id="places-search" placeholder="place to search" type="search" name="filter" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+            <ul class="list-group" data-bind="foreach: filterLocations">
+                <li class="list-group-item"  data-bind="click: $parent.showInfowindow, text: title"></li>
+            </ul>
+ 
+        </section>
+        <aside class="col-9 sm-9" >
+            <div id="map"></div>
+        </aside>      
+</div>
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdq172CyzJdxfglKo399qzMLp-l3TyhIw&libraries=geometry&v=3&callback=initMap" onerror="onError()">
+    </script>
+</body>
+</html>
